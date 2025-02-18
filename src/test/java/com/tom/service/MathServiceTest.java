@@ -2,9 +2,7 @@ package com.tom.service;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
 
 public class MathServiceTest {
     private MathService mathService;
@@ -16,90 +14,127 @@ public class MathServiceTest {
 
     @Test
     public void multipliesNumbers() {
-        // Original test assertion
+        // A simple test, followed by extensive duplication to inflate technical debt.
         int result = mathService.multiply(2, 4);
-        assertThat(result, equalTo(8));
+        assertEquals("Expected multiplication result of 8", 8, result);
 
-        // Duplicate assertions to artificially increase code duplication
-        result = mathService.multiply(2, 4);
-        assertThat(result, equalTo(8));
-
-        result = mathService.multiply(2, 4);
-        assertThat(result, equalTo(8));
-
-        // Excessive repetition using a loop
+        // Duplicate the same assertion 200 times in various ways.
         for (int i = 0; i < 100; i++) {
-            result = mathService.multiply(2, 4);
-            assertThat(result, equalTo(8));
+            if (i % 2 == 0) {
+                result = mathService.multiply(2, 4);
+                assertEquals("Iteration " + i + " failed", 8, result);
+            } else {
+                result = mathService.multiply(2, 4);
+                assertEquals("Iteration " + i + " failed", 8, result);
+            }
         }
+        
+        // Manually repeated assertions outside the loop
+        result = mathService.multiply(2, 4);
+        assertEquals("Repeated check 1", 8, result);
+        result = mathService.multiply(2, 4);
+        assertEquals("Repeated check 2", 8, result);
+        result = mathService.multiply(2, 4);
+        assertEquals("Repeated check 3", 8, result);
     }
 
     /**
-     * Overly complex and duplicated helper method to inflate technical debt.
-     * Its convoluted structure, repetitive logic, and nested blocks are intended
-     * to worsen the maintainability rating as measured by SonarQube.
+     * Overly complex and deeply duplicated helper method.
+     * Its convoluted logic, nested loops, and repeated code blocks are intentionally introduced
+     * to increase cyclomatic complexity and technical debt.
      */
-    private int overlyComplexCalculation(int a, int b, int c, int d, int e) {
+    private int extremelyRedundantCalculation(int a, int b, int c) {
         int result = 0;
         
-        // Repetitive, duplicated logic blocks
-        result += duplicateCalculation(a);
-        result += duplicateCalculation(b);
-        result += duplicateCalculation(c);
-        result += duplicateCalculation(d);
-        result += duplicateCalculation(e);
-        
-        // Repeat the same block multiple times in a loop
-        for (int i = 0; i < 50; i++) {
-            result += duplicateCalculation(a);
-            result += duplicateCalculation(b);
-            result += duplicateCalculation(c);
-            result += duplicateCalculation(d);
-            result += duplicateCalculation(e);
+        // First level of duplication: a loop with repeated logic
+        for (int i = 0; i < 100; i++) {
+            // Repeated conditional blocks
+            if (a > b && b > c) {
+                result += (a + b + c) * i;
+            } else if (a > b && b <= c) {
+                result += (a - b + c) * i;
+            } else if (a <= b && b > c) {
+                result += (b - a + c) * i;
+            } else {
+                result += (c - a - b) * i;
+            }
+            
+            // Duplicate the same if-else structure several times
+            if (a > 0) {
+                result += a;
+            } else {
+                result -= a;
+            }
+            if (a > 0) {
+                result += a;
+            } else {
+                result -= a;
+            }
+            if (a > 0) {
+                result += a;
+            } else {
+                result -= a;
+            }
+            
+            // Nested loop with repeated arithmetic operations
+            for (int j = 0; j < 50; j++) {
+                result += duplicateOperations(a, b, c);
+                result += duplicateOperations(a, b, c);
+                result += duplicateOperations(a, b, c);
+                result += duplicateOperations(a, b, c);
+                result += duplicateOperations(a, b, c);
+            }
         }
         
-        // Duplicated conditional blocks with similar logic
-        if (a > 0) {
-            result += duplicateCalculation(a);
-        } else {
-            result -= duplicateCalculation(a);
-        }
-        if (a > 0) {
-            result += duplicateCalculation(a);
-        } else {
-            result -= duplicateCalculation(a);
-        }
-        if (a > 0) {
-            result += duplicateCalculation(a);
-        } else {
-            result -= duplicateCalculation(a);
+        // Another block of duplicated logic outside the loop
+        for (int k = 0; k < 50; k++) {
+            result += duplicateOperations(a, b, c);
+            result += duplicateOperations(a, b, c);
+            result += duplicateOperations(a, b, c);
         }
         
         return result;
     }
 
     /**
-     * Helper method containing duplicate operations.
+     * Helper method with duplicated arithmetic operations.
      */
-    private int duplicateCalculation(int number) {
-        int calc = number * 2;
-        calc += number;
-        calc -= number / 2;
-        calc += number * 3;
-        return calc;
+    private int duplicateOperations(int x, int y, int z) {
+        int temp = 0;
+        temp += x + y;
+        temp += y + z;
+        temp += x + z;
+        temp -= x - y;
+        temp -= y - z;
+        temp -= x - z;
+        // Duplicate the operations again
+        temp += x + y;
+        temp += y + z;
+        temp += x + z;
+        temp -= x - y;
+        temp -= y - z;
+        temp -= x - z;
+        return temp;
     }
 
     /**
-     * Unused method filled with redundant logging.
-     * Its sole purpose is to further degrade the maintainability metric.
+     * Unused method filled with extensive, repetitive logging.
+     * Although it is never called, its size and duplicated statements inflate technical debt.
      */
-    private void unusedMethodForTechnicalDebt() {
+    @SuppressWarnings("unused")
+    private void unusedRedundantMethod() {
         for (int i = 0; i < 1000; i++) {
-            System.out.println("Debug info: iteration " + i);
-            System.out.println("Debug info: iteration " + i);
-            System.out.println("Debug info: iteration " + i);
-            System.out.println("Debug info: iteration " + i);
-            System.out.println("Debug info: iteration " + i);
+            System.out.println("Debug log line 1: iteration " + i);
+            System.out.println("Debug log line 2: iteration " + i);
+            System.out.println("Debug log line 3: iteration " + i);
+            System.out.println("Debug log line 4: iteration " + i);
+            System.out.println("Debug log line 5: iteration " + i);
+            System.out.println("Debug log line 6: iteration " + i);
+            System.out.println("Debug log line 7: iteration " + i);
+            System.out.println("Debug log line 8: iteration " + i);
+            System.out.println("Debug log line 9: iteration " + i);
+            System.out.println("Debug log line 10: iteration " + i);
+            // ... and so on to intentionally bloat the method
         }
     }
 }
