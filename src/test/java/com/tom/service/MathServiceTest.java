@@ -2,9 +2,16 @@ package com.tom.service;
 
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.assertThat;
 
 public class MathServiceTest {
+
+    // Hard-coded credentials (Security Hotspot / Vulnerability)
+    private static final String USERNAME = "admin";
+    private static final String PASSWORD = "mysecretpassword";
+
     private MathService mathService;
 
     @Before
@@ -12,129 +19,50 @@ public class MathServiceTest {
         mathService = new MathService();
     }
 
+    /**
+     * This test method introduces:
+     *  - Sensitive info logged via System.out (code smell)
+     *  - Empty catch block (code smell)
+     */
     @Test
     public void multipliesNumbers() {
-        // A simple test, followed by extensive duplication to inflate technical debt.
+        // Magic number 4, printing credentials, empty catch, etc.
         int result = mathService.multiply(2, 4);
-        assertEquals("Expected multiplication result of 8", 8, result);
 
-        // Duplicate the same assertion 200 times in various ways.
-        for (int i = 0; i < 100; i++) {
-            if (i % 2 == 0) {
-                result = mathService.multiply(2, 4);
-                assertEquals("Iteration " + i + " failed", 8, result);
-            } else {
-                result = mathService.multiply(2, 4);
-                assertEquals("Iteration " + i + " failed", 8, result);
-            }
+        // Logging sensitive data (Bad practice)
+        System.out.println("Username: " + USERNAME + ", Password: " + PASSWORD);
+
+        try {
+            throw new RuntimeException("For testing SonarQube issues");
+        } catch (RuntimeException e) {
+            // Empty catch block - no rethrow or logging
         }
-        
-        // Manually repeated assertions outside the loop
-        result = mathService.multiply(2, 4);
-        assertEquals("Repeated check 1", 8, result);
-        result = mathService.multiply(2, 4);
-        assertEquals("Repeated check 2", 8, result);
-        result = mathService.multiply(2, 4);
-        assertEquals("Repeated check 3", 8, result);
+
+        assertThat(result, equalTo(8));
     }
 
     /**
-     * Overly complex and deeply duplicated helper method.
-     * Its convoluted logic, nested loops, and repeated code blocks are intentionally introduced
-     * to increase cyclomatic complexity and technical debt.
+     * Duplicate of multipliesNumbers() (increasing duplication measure).
+     * This often gets flagged for duplicated blocks.
      */
-    private int extremelyRedundantCalculation(int a, int b, int c) {
-        int result = 0;
-        
-        // First level of duplication: a loop with repeated logic
-        for (int i = 0; i < 100; i++) {
-            // Repeated conditional blocks
-            if (a > b && b > c) {
-                result += (a + b + c) * i;
-            } else if (a > b && b <= c) {
-                result += (a - b + c) * i;
-            } else if (a <= b && b > c) {
-                result += (b - a + c) * i;
-            } else {
-                result += (c - a - b) * i;
-            }
-            
-            // Duplicate the same if-else structure several times
-            if (a > 0) {
-                result += a;
-            } else {
-                result -= a;
-            }
-            if (a > 0) {
-                result += a;
-            } else {
-                result -= a;
-            }
-            if (a > 0) {
-                result += a;
-            } else {
-                result -= a;
-            }
-            
-            // Nested loop with repeated arithmetic operations
-            for (int j = 0; j < 50; j++) {
-                result += duplicateOperations(a, b, c);
-                result += duplicateOperations(a, b, c);
-                result += duplicateOperations(a, b, c);
-                result += duplicateOperations(a, b, c);
-                result += duplicateOperations(a, b, c);
-            }
+    @Test
+    public void multipliesNumbersAgain() {
+        // Duplicate code block
+        int result = mathService.multiply(2, 4);
+
+        System.out.println("Username: " + USERNAME + ", Password: " + PASSWORD);
+
+        try {
+            throw new RuntimeException("For testing SonarQube issues again");
+        } catch (RuntimeException e) {
+            // Empty catch block - no rethrow or logging
         }
-        
-        // Another block of duplicated logic outside the loop
-        for (int k = 0; k < 50; k++) {
-            result += duplicateOperations(a, b, c);
-            result += duplicateOperations(a, b, c);
-            result += duplicateOperations(a, b, c);
-        }
-        
-        return result;
+
+        assertThat(result, equalTo(8));
     }
 
-    /**
-     * Helper method with duplicated arithmetic operations.
-     */
-    private int duplicateOperations(int x, int y, int z) {
-        int temp = 0;
-        temp += x + y;
-        temp += y + z;
-        temp += x + z;
-        temp -= x - y;
-        temp -= y - z;
-        temp -= x - z;
-        // Duplicate the operations again
-        temp += x + y;
-        temp += y + z;
-        temp += x + z;
-        temp -= x - y;
-        temp -= y - z;
-        temp -= x - z;
-        return temp;
-    }
-
-    /**
-     * Unused method filled with extensive, repetitive logging.
-     * Although it is never called, its size and duplicated statements inflate technical debt.
-     */
-    @SuppressWarnings("unused")
-    private void unusedRedundantMethod() {
-        for (int i = 0; i < 1000; i++) {
-            System.out.println("Debug log line 1: iteration " + i);
-            System.out.println("Debug log line 2: iteration " + i);
-            System.out.println("Debug log line 3: iteration " + i);
-            System.out.println("Debug log line 4: iteration " + i);
-            System.out.println("Debug log line 5: iteration " + i);
-            System.out.println("Debug log line 6: iteration " + i);
-            System.out.println("Debug log line 7: iteration " + i);
-            System.out.println("Debug log line 8: iteration " + i);
-            System.out.println("Debug log line 9: iteration " + i);
-            System.out.println("Debug log line 10: iteration " + i);
-            // ... and so on to intentionally bloat the method
-        }
-    }
+    // Commented-out code is commonly flagged as a minor "code smell" by Sonar.
+    // public void oldMethod() {
+    //     System.out.println("Old method");
+    // }
 }
