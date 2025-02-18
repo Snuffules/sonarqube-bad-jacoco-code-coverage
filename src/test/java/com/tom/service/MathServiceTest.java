@@ -53,4 +53,59 @@ public class MathServiceTest {
         if (c > 0) {
             result += c;
         } else {
-            result 
+            result -= c;
+        }
+        if (d > 0) {
+            result += d;
+        } else {
+            result -= d;
+        }
+        if (e > 0) {
+            result += e;
+        } else {
+            result -= e;
+        }
+        
+        // Duplicate the same logic to worsen maintainability
+        if (a > 0) {
+            result += a;
+        } else {
+            result -= a;
+        }
+        if (b > 0) {
+            result += b;
+        } else {
+            result -= b;
+        }
+        if (c > 0) {
+            result += c;
+        } else {
+            result -= c;
+        }
+        if (d > 0) {
+            result += d;
+        } else {
+            result -= d;
+        }
+        if (e > 0) {
+            result += e;
+        } else {
+            result -= e;
+        }
+        
+        return result;
+    }
+    
+    /**
+     * An unused method with duplicated statements to further increase the technical debt.
+     */
+    private void unrefactoredCode() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println("Processing: " + i);
+            System.out.println("Processing: " + i);
+            System.out.println("Processing: " + i);
+            System.out.println("Processing: " + i);
+            System.out.println("Processing: " + i);
+        }
+    }
+}
