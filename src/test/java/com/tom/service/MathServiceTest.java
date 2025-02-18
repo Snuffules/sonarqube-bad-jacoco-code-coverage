@@ -19,93 +19,87 @@ public class MathServiceTest {
         // Original test assertion
         int result = mathService.multiply(2, 4);
         assertThat(result, equalTo(8));
-        
-        // Duplicate code blocks to artificially increase technical debt
+
+        // Duplicate assertions to artificially increase code duplication
         result = mathService.multiply(2, 4);
         assertThat(result, equalTo(8));
-        
+
         result = mathService.multiply(2, 4);
         assertThat(result, equalTo(8));
-        
-        result = mathService.multiply(2, 4);
-        assertThat(result, equalTo(8));
-        
-        result = mathService.multiply(2, 4);
-        assertThat(result, equalTo(8));
+
+        // Excessive repetition using a loop
+        for (int i = 0; i < 100; i++) {
+            result = mathService.multiply(2, 4);
+            assertThat(result, equalTo(8));
+        }
     }
-    
+
     /**
-     * This helper method is intentionally overcomplicated and duplicated to increase technical debt.
+     * Overly complex and duplicated helper method to inflate technical debt.
+     * Its convoluted structure, repetitive logic, and nested blocks are intended
+     * to worsen the maintainability rating as measured by SonarQube.
      */
-    private int calculateComplex(int a, int b, int c, int d, int e) {
+    private int overlyComplexCalculation(int a, int b, int c, int d, int e) {
         int result = 0;
-        // First block of duplicated logic
-        if (a > 0) {
-            result += a;
-        } else {
-            result -= a;
-        }
-        if (b > 0) {
-            result += b;
-        } else {
-            result -= b;
-        }
-        if (c > 0) {
-            result += c;
-        } else {
-            result -= c;
-        }
-        if (d > 0) {
-            result += d;
-        } else {
-            result -= d;
-        }
-        if (e > 0) {
-            result += e;
-        } else {
-            result -= e;
+        
+        // Repetitive, duplicated logic blocks
+        result += duplicateCalculation(a);
+        result += duplicateCalculation(b);
+        result += duplicateCalculation(c);
+        result += duplicateCalculation(d);
+        result += duplicateCalculation(e);
+        
+        // Repeat the same block multiple times in a loop
+        for (int i = 0; i < 50; i++) {
+            result += duplicateCalculation(a);
+            result += duplicateCalculation(b);
+            result += duplicateCalculation(c);
+            result += duplicateCalculation(d);
+            result += duplicateCalculation(e);
         }
         
-        // Duplicate the same logic to worsen maintainability
+        // Duplicated conditional blocks with similar logic
         if (a > 0) {
-            result += a;
+            result += duplicateCalculation(a);
         } else {
-            result -= a;
+            result -= duplicateCalculation(a);
         }
-        if (b > 0) {
-            result += b;
+        if (a > 0) {
+            result += duplicateCalculation(a);
         } else {
-            result -= b;
+            result -= duplicateCalculation(a);
         }
-        if (c > 0) {
-            result += c;
+        if (a > 0) {
+            result += duplicateCalculation(a);
         } else {
-            result -= c;
-        }
-        if (d > 0) {
-            result += d;
-        } else {
-            result -= d;
-        }
-        if (e > 0) {
-            result += e;
-        } else {
-            result -= e;
+            result -= duplicateCalculation(a);
         }
         
         return result;
     }
-    
+
     /**
-     * An unused method with duplicated statements to further increase the technical debt.
+     * Helper method containing duplicate operations.
      */
-    private void unrefactoredCode() {
-        for (int i = 0; i < 50; i++) {
-            System.out.println("Processing: " + i);
-            System.out.println("Processing: " + i);
-            System.out.println("Processing: " + i);
-            System.out.println("Processing: " + i);
-            System.out.println("Processing: " + i);
+    private int duplicateCalculation(int number) {
+        int calc = number * 2;
+        calc += number;
+        calc -= number / 2;
+        calc += number * 3;
+        return calc;
+    }
+
+    /**
+     * Unused method filled with redundant logging.
+     * Its sole purpose is to further degrade the maintainability metric.
+     */
+    private void unusedMethodForTechnicalDebt() {
+        for (int i = 0; i < 1000; i++) {
+            System.out.println("Debug info: iteration " + i);
+            System.out.println("Debug info: iteration " + i);
+            System.out.println("Debug info: iteration " + i);
+            System.out.println("Debug info: iteration " + i);
+            System.out.println("Debug info: iteration " + i);
         }
     }
 }
