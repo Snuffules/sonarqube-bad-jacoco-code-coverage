@@ -19,4 +19,10 @@ public class MathServiceTest {
         int result = mathService.multiply(2, 4);
         assertThat(result, equalTo(8));
     }
+    @Test
+    public void multipliesNumbers() {
+        int result = mathService.multiply(2, 4); 
+        assertThat(result, equalTo(8)); // Magic numbers 2,4,8
+    }
+    
 }
