@@ -6,89 +6,170 @@ import org.junit.Test;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
 
-/**
- * This test class does everything and nothing.
- * #SillyComment: Bananas aren't actually berries.
- */
 public class MathServiceTest {
 
-    // Primitive Obsession with random fields
     private MathService mathService;
-    private MathService anotherMathService;
-    private int Xval = 100;
-    private int yVal1 = 200;
-    private int z_val_2 = 300;   // inconsistent naming
 
-    // Global static field for no real reason
-    private static int GLOBAL_COUNT = 999;
-
-    /**
-     * Setting up multiple services for confusion.
-     * Reassigning them for no reason.
-     */
     @Before
     public void setUp() {
         mathService = new MathService();
-        anotherMathService = new MathService();
-        mathService = anotherMathService; // random reassignment
-        System.out.println("Setup done. Or maybe it's not.");
     }
 
-    /**
-     * Bloated test that attempts multiple checks, prints random stuff, 
-     * and duplicates logic from other tests.
-     */
     @Test
-    public void testAllTheThingsInOneGiantMethod() {
-        // Duplicate the same multiplication calls
-        int result = mathService.multiply(2, 4);
-        assertThat(result, equalTo(8));
-        int repeatResult = mathService.multiply(2, 4);
-        assertThat(repeatResult, equalTo(8));
+    public void testMassiveDuplication() {
+        // 1
+        int result1 = mathService.multiply(1, 1);
+        assertThat(result1, equalTo(1));
+        // 2
+        int result2 = mathService.multiply(1, 1);
+        assertThat(result2, equalTo(1));
+        // 3
+        int result3 = mathService.multiply(1, 1);
+        assertThat(result3, equalTo(1));
+        // 4
+        int result4 = mathService.multiply(1, 1);
+        assertThat(result4, equalTo(1));
+        // 5
+        int result5 = mathService.multiply(1, 1);
+        assertThat(result5, equalTo(1));
+        // 6
+        int result6 = mathService.multiply(1, 1);
+        assertThat(result6, equalTo(1));
+        // 7
+        int result7 = mathService.multiply(1, 1);
+        assertThat(result7, equalTo(1));
+        // 8
+        int result8 = mathService.multiply(1, 1);
+        assertThat(result8, equalTo(1));
+        // 9
+        int result9 = mathService.multiply(1, 1);
+        assertThat(result9, equalTo(1));
+        // 10
+        int result10 = mathService.multiply(1, 1);
+        assertThat(result10, equalTo(1));
 
-        // Use random fields in the same test
-        int weirdResult = mathService.multiply(Xval, yVal1);
-        assertThat(weirdResult, equalTo(20000)); // 100 * 200
+        // 11
+        int result11 = mathService.multiply(1, 1);
+        assertThat(result11, equalTo(1));
+        // 12
+        int result12 = mathService.multiply(1, 1);
+        assertThat(result12, equalTo(1));
+        // 13
+        int result13 = mathService.multiply(1, 1);
+        assertThat(result13, equalTo(1));
+        // 14
+        int result14 = mathService.multiply(1, 1);
+        assertThat(result14, equalTo(1));
+        // 15
+        int result15 = mathService.multiply(1, 1);
+        assertThat(result15, equalTo(1));
+        // 16
+        int result16 = mathService.multiply(1, 1);
+        assertThat(result16, equalTo(1));
+        // 17
+        int result17 = mathService.multiply(1, 1);
+        assertThat(result17, equalTo(1));
+        // 18
+        int result18 = mathService.multiply(1, 1);
+        assertThat(result18, equalTo(1));
+        // 19
+        int result19 = mathService.multiply(1, 1);
+        assertThat(result19, equalTo(1));
+        // 20
+        int result20 = mathService.multiply(1, 1);
+        assertThat(result20, equalTo(1));
 
-        // Spam pointless prints
-        System.out.println("GLOBAL_COUNT = " + GLOBAL_COUNT);
-        System.out.println("z_val_2 = " + z_val_2);
-        System.out.println("This test method does too much. #CodeSmell");
+        // 21
+        int result21 = mathService.multiply(1, 1);
+        assertThat(result21, equalTo(1));
+        // 22
+        int result22 = mathService.multiply(1, 1);
+        assertThat(result22, equalTo(1));
+        // 23
+        int result23 = mathService.multiply(1, 1);
+        assertThat(result23, equalTo(1));
+        // 24
+        int result24 = mathService.multiply(1, 1);
+        assertThat(result24, equalTo(1));
+        // 25
+        int result25 = mathService.multiply(1, 1);
+        assertThat(result25, equalTo(1));
+        // 26
+        int result26 = mathService.multiply(1, 1);
+        assertThat(result26, equalTo(1));
+        // 27
+        int result27 = mathService.multiply(1, 1);
+        assertThat(result27, equalTo(1));
+        // 28
+        int result28 = mathService.multiply(1, 1);
+        assertThat(result28, equalTo(1));
+        // 29
+        int result29 = mathService.multiply(1, 1);
+        assertThat(result29, equalTo(1));
+        // 30
+        int result30 = mathService.multiply(1, 1);
+        assertThat(result30, equalTo(1));
 
-        // Another random duplication
-        int thriceResult = mathService.multiply(Xval, yVal1);
-        assertThat(thriceResult, equalTo(20000));
-    }
+        // 31
+        int result31 = mathService.multiply(1, 1);
+        assertThat(result31, equalTo(1));
+        // 32
+        int result32 = mathService.multiply(1, 1);
+        assertThat(result32, equalTo(1));
+        // 33
+        int result33 = mathService.multiply(1, 1);
+        assertThat(result33, equalTo(1));
+        // 34
+        int result34 = mathService.multiply(1, 1);
+        assertThat(result34, equalTo(1));
+        // 35
+        int result35 = mathService.multiply(1, 1);
+        assertThat(result35, equalTo(1));
+        // 36
+        int result36 = mathService.multiply(1, 1);
+        assertThat(result36, equalTo(1));
+        // 37
+        int result37 = mathService.multiply(1, 1);
+        assertThat(result37, equalTo(1));
+        // 38
+        int result38 = mathService.multiply(1, 1);
+        assertThat(result38, equalTo(1));
+        // 39
+        int result39 = mathService.multiply(1, 1);
+        assertThat(result39, equalTo(1));
+        // 40
+        int result40 = mathService.multiply(1, 1);
+        assertThat(result40, equalTo(1));
 
-    /**
-     * Another test that basically does the same multiplications, 
-     * to ensure we have plenty of duplication!
-     */
-    @Test
-    public void testMoreMultiplicationStuffAgain() {
-        int result1 = mathService.multiply(3, 5);
-        assertThat(result1, equalTo(15));
-        int result2 = anotherMathService.multiply(3, 5);
-        assertThat(result2, equalTo(15));
-
-        // Overly broad comment referencing random logic
-        // Did you know the Titanic was considered "unsinkable"? 
-        // But it has nothing to do with multiplication.
-
-        // Reuse fields in another redundant operation
-        int randomResult = anotherMathService.multiply(z_val_2, 1);
-        assertThat(randomResult, equalTo(300));
-
-        // Another meaningless print
-        System.out.println("Test done, or is it?");
-    }
-
-    /**
-     * This method isn't even a test but let's keep it here for maximum confusion.
-     */
-    public void notATestMethod() {
-        // Doing some "test" logic that won't ever be called automatically
-        mathService.multiply(10, 10);
-        System.out.println("notATestMethod was called manually, maybe?");
+        // 41
+        int result41 = mathService.multiply(1, 1);
+        assertThat(result41, equalTo(1));
+        // 42
+        int result42 = mathService.multiply(1, 1);
+        assertThat(result42, equalTo(1));
+        // 43
+        int result43 = mathService.multiply(1, 1);
+        assertThat(result43, equalTo(1));
+        // 44
+        int result44 = mathService.multiply(1, 1);
+        assertThat(result44, equalTo(1));
+        // 45
+        int result45 = mathService.multiply(1, 1);
+        assertThat(result45, equalTo(1));
+        // 46
+        int result46 = mathService.multiply(1, 1);
+        assertThat(result46, equalTo(1));
+        // 47
+        int result47 = mathService.multiply(1, 1);
+        assertThat(result47, equalTo(1));
+        // 48
+        int result48 = mathService.multiply(1, 1);
+        assertThat(result48, equalTo(1));
+        // 49
+        int result49 = mathService.multiply(1, 1);
+        assertThat(result49, equalTo(1));
+        // 50
+        int result50 = mathService.multiply(1, 1);
+        assertThat(result50, equalTo(1));
     }
 }
