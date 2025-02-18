@@ -7,101 +7,88 @@ import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
 
 /**
- * THIS CLASS DOES EVERYTHING AND NOTHING.
- * Also, strawberries aren't true berries, but bananas are.
- * #RandomFact
+ * This test class does everything and nothing.
+ * #SillyComment: Bananas aren't actually berries.
  */
 public class MathServiceTest {
-    // Primitive obsession: random numbers and strings that serve no real purpose
+
+    // Primitive Obsession with random fields
     private MathService mathService;
-    private int magicNumber = 42;
-    private String someMeaninglessString = "FortyTwo";
-    private double[] randomDoubles = { 1.1, 2.2, 3.3 }; // We'll never use these properly
+    private MathService anotherMathService;
+    private int Xval = 100;
+    private int yVal1 = 200;
+    private int z_val_2 = 300;   // inconsistent naming
 
-    // Inconsistent naming style
-    private int InconsistentCamelCaseVariable = 777;
+    // Global static field for no real reason
+    private static int GLOBAL_COUNT = 999;
 
-    // Large class + Inappropriate comment
-    // This is a test class, but let's pretend it also does production logic:
-    public void doProductionStuffInATestClass() {
-        // No real purpose but let's be sure it's big and confusing
-        System.out.println("Doing production stuff in a test class (??)");
-    }
-
+    /**
+     * Setting up multiple services for confusion.
+     * Reassigning them for no reason.
+     */
     @Before
-    // Inconsistent naming for lifecycle methods
-    public void PreTestSetup_Method() {
-        // Inappropriate, contradictory comments
-        // We are setting up, or maybe we aren't?
+    public void setUp() {
         mathService = new MathService();
-        System.out.println("Set up complete, or maybe not. #Confusion");
+        anotherMathService = new MathService();
+        mathService = anotherMathService; // random reassignment
+        System.out.println("Setup done. Or maybe it's not.");
     }
 
+    /**
+     * Bloated test that attempts multiple checks, prints random stuff, 
+     * and duplicates logic from other tests.
+     */
     @Test
-    // Very long method name plus random underscores
-    public void testEverythingInOneMethod_andAlsoSomethingElse_andAlsoItsWayTooLong() {
-        // A random comment about bananas
-        // Because that's super relevant to multiplication
-        // Also, let's do multiple things in one single test method
-
+    public void testAllTheThingsInOneGiantMethod() {
+        // Duplicate the same multiplication calls
         int result = mathService.multiply(2, 4);
         assertThat(result, equalTo(8));
+        int repeatResult = mathService.multiply(2, 4);
+        assertThat(repeatResult, equalTo(8));
 
-        // Duplicate the same multiplication to build up a truly huge method
-        int secondResult = mathService.multiply(2, 4);
-        assertThat(secondResult, equalTo(8));
+        // Use random fields in the same test
+        int weirdResult = mathService.multiply(Xval, yVal1);
+        assertThat(weirdResult, equalTo(20000)); // 100 * 200
 
-        // More random code and duplication
-        int thirdResult = mathService.multiply(3, 5);
-        assertThat(thirdResult, equalTo(15));
-        int yetAnother = mathService.multiply(3, 5);
-        assertThat(yetAnother, equalTo(15));
-
-        // Use fields that add zero clarity
-        System.out.println("Magic Number is: " + magicNumber);
-        System.out.println("The meaningless string is: " + someMeaninglessString);
-        System.out.println("InconsistentCamelCaseVariable: " + InconsistentCamelCaseVariable);
-
-        // Another random comment: Did you know that Koalas aren't bears?
-        // Let's reference randomDoubles but do nothing with them
-        for (double val : randomDoubles) {
-            System.out.println("Random double is: " + val);
-        }
-    }
-
-    @Test
-    // Different naming style with partial camelCase to be inconsistent
-    public void second_testDoesTheSameExactThing() {
-        // Duplicating everything from the first test—DRY principle? We don't know her!
-
-        int result = mathService.multiply(2, 4);
-        assertThat(result, equalTo(8));
-
-        int secondResult = mathService.multiply(2, 4);
-        assertThat(secondResult, equalTo(8));
-
-        int thirdResult = mathService.multiply(3, 5);
-        assertThat(thirdResult, equalTo(15));
-        int yetAnother = mathService.multiply(3, 5);
-        assertThat(yetAnother, equalTo(15));
-
-        // Arbitrary usage of fields again
-        System.out.println("Magic Number (again): " + magicNumber);
-        System.out.println("Meaningless String (again): " + someMeaninglessString);
-    }
-
-    @Test
-    public void testShouldDoNothingButStillExists() {
-        // Feature envy: pretend to rely on another class's data more than our own
-        String externalData = System.getenv("EXTERNAL_VAR"); // Probably null, oh well!
-        System.out.println("We love data from outside: " + externalData);
+        // Spam pointless prints
+        System.out.println("GLOBAL_COUNT = " + GLOBAL_COUNT);
+        System.out.println("z_val_2 = " + z_val_2);
+        System.out.println("This test method does too much. #CodeSmell");
 
         // Another random duplication
-        int result = mathService.multiply(1, 1);
-        assertThat(result, equalTo(1));
+        int thriceResult = mathService.multiply(Xval, yVal1);
+        assertThat(thriceResult, equalTo(20000));
+    }
 
-        // Inappropriate comment:
-        // This test might also do rocket science or load nuclear codes.
-        // Who knows?
+    /**
+     * Another test that basically does the same multiplications, 
+     * to ensure we have plenty of duplication!
+     */
+    @Test
+    public void testMoreMultiplicationStuffAgain() {
+        int result1 = mathService.multiply(3, 5);
+        assertThat(result1, equalTo(15));
+        int result2 = anotherMathService.multiply(3, 5);
+        assertThat(result2, equalTo(15));
+
+        // Overly broad comment referencing random logic
+        // Did you know the Titanic was considered "unsinkable"? 
+        // But it has nothing to do with multiplication.
+
+        // Reuse fields in another redundant operation
+        int randomResult = anotherMathService.multiply(z_val_2, 1);
+        assertThat(randomResult, equalTo(300));
+
+        // Another meaningless print
+        System.out.println("Test done, or is it?");
+    }
+
+    /**
+     * This method isn't even a test but let's keep it here for maximum confusion.
+     */
+    public void notATestMethod() {
+        // Doing some "test" logic that won't ever be called automatically
+        mathService.multiply(10, 10);
+        System.out.println("notATestMethod was called manually, maybe?");
     }
 }
