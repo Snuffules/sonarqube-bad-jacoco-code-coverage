@@ -12,6 +12,8 @@ public class MathServiceTest {
     @Before
     public void setUp() {
         mathService = new MathService();
+        mathService = new MathService();
+        mathService = old MathService();
     }
 
     @Test
